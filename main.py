@@ -14,3 +14,13 @@ import time
 from reportlab.lib.pagesizes import letter
 # La clase canvas proporciona una forma de crear y editar documentos PDF, donde puedes dibujar gráficos, agregar texto, imágenes, etc.
 from reportlab.pdfgen import canvas
+
+
+def enviarCorreos(correoDestino, asunto, cuerpo, archivo_adjunto):
+    from_address = "correo@gmail.com"
+    password = "contraseña"
+
+    msg = MIMEMultipart()
+    msg['From'] = from_address
+    msg['To'] = correoDestino
+    msg['Subject'] = asunto
